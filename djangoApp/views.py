@@ -7,11 +7,14 @@
 
 from django.http import HttpResponse
 import datetime
+from django import template
 
 def index(request):
     return HttpResponse("Hello Django")
 
 def today_is(request):
     now = datetime.datetime.now()
-    html = "<html><body>Current date and time: {0}</body></html>".format(now)
+    t = template.loader.get_template('djangoApp/datetime.html')
+    c = {'now': now}
+    html = t.render(c)
     return HttpResponse(html)

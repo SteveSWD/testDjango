@@ -1,0 +1,13 @@
+{% extends djangoApp/base.html" %}
+
+{% include template_name %}
+
+{% block content %}
+
+    {% if now %}
+        <p>Current date and time is {{ now }}</p>
+    {% else %}
+        <p>now variable is not available</p>
+    {% endif %}
+
+{% endblock %}

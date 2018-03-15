@@ -5,8 +5,7 @@
         <title>Current Time</title>
     </head>
     <body>
-        {# This is a comment #}
-        {# check the existence of now variable in the template using the if tag #}
+        {% include template_name %}
 
         {% if now %}
             <p>Current date and time is {{now}}</p>
